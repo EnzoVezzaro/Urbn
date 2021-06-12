@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "singles",
+  "info": {
+    "name": "Singles",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "File": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "album": {
+      "via": "singles",
+      "model": "albums"
+    }
+  }
+}

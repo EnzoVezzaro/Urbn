@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nf_ts",
+  "info": {
+    "name": "NFTs"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "NFT_ID": {
+      "type": "string"
+    },
+    "album": {
+      "model": "albums"
+    },
+    "single": {
+      "model": "singles"
+    }
+  }
+}
