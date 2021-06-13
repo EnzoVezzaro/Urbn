@@ -20,6 +20,10 @@
     },
     "email": {
       "type": "email"
+    },
+    "payouts": {
+      "via": "artist",
+      "collection": "payouts"
     }
   }
 }

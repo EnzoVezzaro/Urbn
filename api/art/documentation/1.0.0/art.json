@@ -545,6 +545,12 @@
               "email": {
                 "type": "string"
               },
+              "payouts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "published_at": {
                 "type": "string"
               },
@@ -555,6 +561,9 @@
                 "type": "string"
               }
             }
+          },
+          "stock": {
+            "type": "integer"
           },
           "published_at": {
             "type": "string",
@@ -572,6 +581,9 @@
           },
           "artist": {
             "type": "string"
+          },
+          "stock": {
+            "type": "integer"
           },
           "published_at": {
             "type": "string",

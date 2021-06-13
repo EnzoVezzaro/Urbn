@@ -25,7 +25,7 @@
     "artist": {
       "model": "artist"
     },
-    "Status": {
+    "status": {
       "type": "enumeration",
       "enum": [
         "under_review",
@@ -34,6 +34,21 @@
       ],
       "default": "under_review",
       "private": true
+    },
+    "stock": {
+      "type": "biginteger"
+    },
+    "cover": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
     }
   }
 }

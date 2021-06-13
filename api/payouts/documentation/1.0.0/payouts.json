@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/artists": {
+    "/payouts": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the payouts's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve payouts document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Artist"
+                    "$ref": "#/components/schemas/Payouts"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Artist"
+          "Payouts"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new record",
+        "description": "Create a new payouts record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve payouts document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Artist"
+                  "$ref": "#/components/schemas/Payouts"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Artist"
+          "Payouts"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewArtist"
+                "$ref": "#/components/schemas/NewPayouts"
               }
             }
           }
         }
       }
     },
-    "/artists/count": {
+    "/payouts/count": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Retrieve the numver of payouts documents",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve payouts document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Artist"
+          "Payouts"
         ],
         "parameters": []
       }
     },
-    "/artists/{id}": {
+    "/payouts/{id}": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find one payouts record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve payouts document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Artist"
+                  "$ref": "#/components/schemas/Payouts"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Artist"
+          "Payouts"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single payouts record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve payouts document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Artist"
+                  "$ref": "#/components/schemas/Payouts"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Artist"
+          "Payouts"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewArtist"
+                "$ref": "#/components/schemas/NewPayouts"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single payouts record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single payouts based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Artist"
+          "Payouts"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Artist": {
+      "Payouts": {
         "required": [
           "id"
         ],
@@ -522,40 +522,40 @@
           "id": {
             "type": "string"
           },
-          "name": {
+          "paypal_email": {
             "type": "string"
           },
-          "surname": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          },
-          "payouts": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "paypal_email": {
-                  "type": "string"
-                },
-                "artist": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
+          "artist": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "surname": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "payouts": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           },
@@ -565,22 +565,13 @@
           }
         }
       },
-      "NewArtist": {
+      "NewPayouts": {
         "properties": {
-          "name": {
+          "paypal_email": {
             "type": "string"
           },
-          "surname": {
+          "artist": {
             "type": "string"
-          },
-          "email": {
-            "type": "string"
-          },
-          "payouts": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "published_at": {
             "type": "string",
@@ -598,7 +589,7 @@
   },
   "tags": [
     {
-      "name": "Artist"
+      "name": "Payouts"
     }
   ]
 }

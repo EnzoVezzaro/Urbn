@@ -20,6 +20,9 @@
     },
     "artist": {
       "model": "artist"
+    },
+    "stock": {
+      "type": "biginteger"
     }
   }
 }
