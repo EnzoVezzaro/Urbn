@@ -1,5 +1,5 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "nf_ts",
   "info": {
     "name": "NFTs"
@@ -11,14 +11,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "NFT_ID": {
+    "merchant_id": {
       "type": "string"
     },
-    "album": {
-      "model": "albums"
-    },
-    "single": {
-      "model": "singles"
+    "merchant_url": {
+      "type": "string"
     }
   }
 }

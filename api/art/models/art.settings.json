@@ -1,8 +1,8 @@
 {
-  "kind": "collectionType",
-  "collectionName": "albums",
+  "kind": "singleType",
+  "collectionName": "arts",
   "info": {
-    "name": "Albums",
+    "name": "Art",
     "description": ""
   },
   "options": {
@@ -12,10 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string"
     },
-    "Description": {
+    "description": {
       "type": "text"
     }
   }

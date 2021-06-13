@@ -1,19 +1,18 @@
 {
   "paths": {
-    "/nf-ts": {
+    "/art": {
       "get": {
         "deprecated": false,
-        "description": "Find all the nf-ts's records",
+        "description": "Find all the art's records",
         "responses": {
           "200": {
-            "description": "Retrieve nf-ts document(s)",
+            "description": "Retrieve art document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Art"
                   }
                 }
               }
@@ -52,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Nf-ts"
+          "Art"
         ],
         "parameters": [
           {
@@ -195,18 +194,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single nf-ts record",
+        "description": "Update a single art record",
         "responses": {
           "200": {
-            "description": "Retrieve nf-ts document(s)",
+            "description": "Retrieve art document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Art"
                 }
               }
             }
@@ -244,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Nf-ts"
+          "Art"
         ],
         "requestBody": {
           "description": "",
@@ -252,7 +247,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewNf-ts"
+                "$ref": "#/components/schemas/NewArt"
               }
             }
           }
@@ -261,10 +256,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single nf-ts record",
+        "description": "Delete a single art record",
         "responses": {
           "200": {
-            "description": "deletes a single nf-ts based on the ID supplied",
+            "description": "deletes a single art based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -307,7 +302,7 @@
         },
         "summary": "",
         "tags": [
-          "Nf-ts"
+          "Art"
         ],
         "parameters": []
       }
@@ -315,7 +310,7 @@
   },
   "components": {
     "schemas": {
-      "Nf-ts": {
+      "Art": {
         "required": [
           "id"
         ],
@@ -323,10 +318,10 @@
           "id": {
             "type": "string"
           },
-          "merchant_id": {
+          "name": {
             "type": "string"
           },
-          "merchant_url": {
+          "description": {
             "type": "string"
           },
           "published_at": {
@@ -335,12 +330,12 @@
           }
         }
       },
-      "NewNf-ts": {
+      "NewArt": {
         "properties": {
-          "merchant_id": {
+          "name": {
             "type": "string"
           },
-          "merchant_url": {
+          "description": {
             "type": "string"
           },
           "published_at": {
@@ -357,5 +352,9 @@
       }
     }
   },
-  "tags": []
+  "tags": [
+    {
+      "name": "Art"
+    }
+  ]
 }

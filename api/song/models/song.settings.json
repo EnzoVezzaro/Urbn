@@ -1,8 +1,8 @@
 {
-  "kind": "collectionType",
-  "collectionName": "singles",
+  "kind": "singleType",
+  "collectionName": "songs",
   "info": {
-    "name": "Singles",
+    "name": "Song",
     "description": ""
   },
   "options": {
@@ -12,22 +12,23 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string"
     },
-    "File": {
+    "description": {
+      "type": "text"
+    },
+    "file": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
-        "files"
+        "images",
+        "files",
+        "videos"
       ],
       "plugin": "upload",
-      "required": true,
+      "required": false,
       "pluginOptions": {}
-    },
-    "album": {
-      "via": "singles",
-      "model": "albums"
     }
   }
 }

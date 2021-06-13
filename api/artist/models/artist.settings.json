@@ -1,8 +1,9 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "artists",
   "info": {
-    "name": "Artists"
+    "name": "Artist",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -11,13 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string"
     },
-    "Surname": {
+    "surname": {
       "type": "string"
     },
-    "Email": {
+    "email": {
       "type": "email"
     }
   }

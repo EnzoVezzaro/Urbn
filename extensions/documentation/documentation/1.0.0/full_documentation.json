@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "06/12/2021 11:34:33 PM"
+    "x-generation-date": "06/13/2021 1:07:31 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -556,19 +556,19 @@
         ]
       }
     },
-    "/artists": {
+    "/art": {
       "get": {
         "deprecated": false,
-        "description": "Find all the artists's records",
+        "description": "Find all the art's records",
         "responses": {
           "200": {
-            "description": "Retrieve artists document(s)",
+            "description": "Retrieve art document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Artists"
+                    "$ref": "#/components/schemas/Art"
                   }
                 }
               }
@@ -607,7 +607,7 @@
         },
         "summary": "",
         "tags": [
-          "Artists"
+          "Art"
         ],
         "parameters": [
           {
@@ -748,198 +748,16 @@
           }
         ]
       },
-      "post": {
-        "deprecated": false,
-        "description": "Create a new artists record",
-        "responses": {
-          "200": {
-            "description": "Retrieve artists document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Artists"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Artists"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewArtists"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/artists/count": {
-      "get": {
-        "deprecated": false,
-        "description": "Retrieve the numver of artists documents",
-        "responses": {
-          "200": {
-            "description": "Retrieve artists document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "count": {
-                      "type": "integer"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Artists"
-        ],
-        "parameters": []
-      }
-    },
-    "/artists/{id}": {
-      "get": {
-        "deprecated": false,
-        "description": "Find one artists record",
-        "responses": {
-          "200": {
-            "description": "Retrieve artists document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Artists"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Artists"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      },
       "put": {
         "deprecated": false,
-        "description": "Update a single artists record",
+        "description": "Update a single art record",
         "responses": {
           "200": {
-            "description": "Retrieve artists document(s)",
+            "description": "Retrieve art document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Artists"
+                  "$ref": "#/components/schemas/Art"
                 }
               }
             }
@@ -977,7 +795,7 @@
         },
         "summary": "",
         "tags": [
-          "Artists"
+          "Art"
         ],
         "requestBody": {
           "description": "",
@@ -985,30 +803,19 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewArtists"
+                "$ref": "#/components/schemas/NewArt"
               }
             }
           }
         },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        "parameters": []
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single artists record",
+        "description": "Delete a single art record",
         "responses": {
           "200": {
-            "description": "deletes a single artists based on the ID supplied",
+            "description": "deletes a single art based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -1051,20 +858,316 @@
         },
         "summary": "",
         "tags": [
-          "Artists"
+          "Art"
+        ],
+        "parameters": []
+      }
+    },
+    "/artist": {
+      "get": {
+        "deprecated": false,
+        "description": "Find all the artist's records",
+        "responses": {
+          "200": {
+            "description": "Retrieve artist document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Artist"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Artist"
         ],
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
+            "name": "_limit",
+            "in": "query",
+            "required": false,
+            "description": "Maximum number of results possible",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_sort",
+            "in": "query",
+            "required": false,
+            "description": "Sort according to a specific field.",
             "schema": {
               "type": "string"
-            }
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_start",
+            "in": "query",
+            "required": false,
+            "description": "Skip a specific number of entries (especially useful for pagination)",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "=",
+            "in": "query",
+            "required": false,
+            "description": "Get entries that matches exactly your input",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_ne",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are not equals to something",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lt",
+            "in": "query",
+            "required": false,
+            "description": "Get record that are lower than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are lower than or equal to a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gt",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than  or equal a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_contains",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_containss",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains (case sensitive) a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_in",
+            "in": "query",
+            "required": false,
+            "description": "Get records that matches any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_nin",
+            "in": "query",
+            "required": false,
+            "description": "Get records that doesn't match any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
           }
         ]
+      },
+      "put": {
+        "deprecated": false,
+        "description": "Update a single artist record",
+        "responses": {
+          "200": {
+            "description": "Retrieve artist document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Artist"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Artist"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewArtist"
+              }
+            }
+          }
+        },
+        "parameters": []
+      },
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a single artist record",
+        "responses": {
+          "200": {
+            "description": "deletes a single artist based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Artist"
+        ],
+        "parameters": []
       }
     },
     "/nf-ts": {
@@ -1260,196 +1363,6 @@
           }
         ]
       },
-      "post": {
-        "deprecated": false,
-        "description": "Create a new nf-ts record",
-        "responses": {
-          "200": {
-            "description": "Retrieve nf-ts document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Nf-ts"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewNf-ts"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/nf-ts/count": {
-      "get": {
-        "deprecated": false,
-        "description": "Retrieve the numver of nf-ts documents",
-        "responses": {
-          "200": {
-            "description": "Retrieve nf-ts document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Nf-ts"
-        ],
-        "parameters": []
-      }
-    },
-    "/nf-ts/{id}": {
-      "get": {
-        "deprecated": false,
-        "description": "Find one nf-ts record",
-        "responses": {
-          "200": {
-            "description": "Retrieve nf-ts document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Nf-ts"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      },
       "put": {
         "deprecated": false,
         "description": "Update a single nf-ts record",
@@ -1514,18 +1427,7 @@
             }
           }
         },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        "parameters": []
       },
       "delete": {
         "deprecated": false,
@@ -1577,33 +1479,22 @@
         "tags": [
           "Nf-ts"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        "parameters": []
       }
     },
-    "/singles": {
+    "/song": {
       "get": {
         "deprecated": false,
-        "description": "Find all the singles's records",
+        "description": "Find all the song's records",
         "responses": {
           "200": {
-            "description": "Retrieve singles document(s)",
+            "description": "Retrieve song document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Singles"
+                    "$ref": "#/components/schemas/Song"
                   }
                 }
               }
@@ -1642,7 +1533,7 @@
         },
         "summary": "",
         "tags": [
-          "Singles"
+          "Song"
         ],
         "parameters": [
           {
@@ -1783,198 +1674,16 @@
           }
         ]
       },
-      "post": {
-        "deprecated": false,
-        "description": "Create a new singles record",
-        "responses": {
-          "200": {
-            "description": "Retrieve singles document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Singles"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Singles"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewSingles"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/singles/count": {
-      "get": {
-        "deprecated": false,
-        "description": "Retrieve the numver of singles documents",
-        "responses": {
-          "200": {
-            "description": "Retrieve singles document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "count": {
-                      "type": "integer"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Singles"
-        ],
-        "parameters": []
-      }
-    },
-    "/singles/{id}": {
-      "get": {
-        "deprecated": false,
-        "description": "Find one singles record",
-        "responses": {
-          "200": {
-            "description": "Retrieve singles document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Singles"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Singles"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      },
       "put": {
         "deprecated": false,
-        "description": "Update a single singles record",
+        "description": "Update a single song record",
         "responses": {
           "200": {
-            "description": "Retrieve singles document(s)",
+            "description": "Retrieve song document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Singles"
+                  "$ref": "#/components/schemas/Song"
                 }
               }
             }
@@ -2012,7 +1721,7 @@
         },
         "summary": "",
         "tags": [
-          "Singles"
+          "Song"
         ],
         "requestBody": {
           "description": "",
@@ -2020,30 +1729,19 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewSingles"
+                "$ref": "#/components/schemas/NewSong"
               }
             }
           }
         },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        "parameters": []
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single singles record",
+        "description": "Delete a single song record",
         "responses": {
           "200": {
-            "description": "deletes a single singles based on the ID supplied",
+            "description": "deletes a single song based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -2086,20 +1784,9 @@
         },
         "summary": "",
         "tags": [
-          "Singles"
+          "Song"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        "parameters": []
       }
     },
     "/email/": {
@@ -4345,38 +4032,6 @@
           "Description": {
             "type": "string"
           },
-          "singles": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "File"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "Name": {
-                  "type": "string"
-                },
-                "File": {
-                  "type": "string"
-                },
-                "album": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -4391,11 +4046,45 @@
           "Description": {
             "type": "string"
           },
-          "singles": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        }
+      },
+      "Art": {
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NewArt": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -4409,7 +4098,7 @@
           }
         }
       },
-      "Artists": {
+      "Artist": {
         "required": [
           "id"
         ],
@@ -4417,13 +4106,13 @@
           "id": {
             "type": "string"
           },
-          "Name": {
+          "name": {
             "type": "string"
           },
-          "Surname": {
+          "surname": {
             "type": "string"
           },
-          "Email": {
+          "email": {
             "type": "string"
           },
           "published_at": {
@@ -4432,15 +4121,15 @@
           }
         }
       },
-      "NewArtists": {
+      "NewArtist": {
         "properties": {
-          "Name": {
+          "name": {
             "type": "string"
           },
-          "Surname": {
+          "surname": {
             "type": "string"
           },
-          "Email": {
+          "email": {
             "type": "string"
           },
           "published_at": {
@@ -4463,68 +4152,11 @@
           "id": {
             "type": "string"
           },
-          "NFT_ID": {
+          "merchant_id": {
             "type": "string"
           },
-          "album": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "Name": {
-                "type": "string"
-              },
-              "Description": {
-                "type": "string"
-              },
-              "singles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "single": {
-            "required": [
-              "id",
-              "File"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "Name": {
-                "type": "string"
-              },
-              "File": {
-                "type": "string"
-              },
-              "album": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "merchant_url": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -4534,13 +4166,10 @@
       },
       "NewNf-ts": {
         "properties": {
-          "NFT_ID": {
+          "merchant_id": {
             "type": "string"
           },
-          "album": {
-            "type": "string"
-          },
-          "single": {
+          "merchant_url": {
             "type": "string"
           },
           "published_at": {
@@ -4555,19 +4184,21 @@
           }
         }
       },
-      "Singles": {
+      "Song": {
         "required": [
-          "id",
-          "File"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "Name": {
+          "name": {
             "type": "string"
           },
-          "File": {
+          "description": {
+            "type": "string"
+          },
+          "file": {
             "required": [
               "id",
               "name",
@@ -4634,49 +4265,18 @@
               }
             }
           },
-          "album": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "Name": {
-                "type": "string"
-              },
-              "Description": {
-                "type": "string"
-              },
-              "singles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
           }
         }
       },
-      "NewSingles": {
+      "NewSong": {
         "properties": {
-          "Name": {
+          "name": {
             "type": "string"
           },
-          "album": {
+          "description": {
             "type": "string"
           },
           "published_at": {
@@ -4981,10 +4581,13 @@
       "name": "Albums"
     },
     {
-      "name": "Artists"
+      "name": "Art"
     },
     {
-      "name": "Singles"
+      "name": "Artist"
+    },
+    {
+      "name": "Song"
     },
     {
       "name": "Email - Email"

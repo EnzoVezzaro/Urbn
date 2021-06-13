@@ -2,24 +2,24 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/nf-ts",
-      "handler": "nf-ts.find",
+      "path": "/song",
+      "handler": "song.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/nf-ts",
-      "handler": "nf-ts.update",
+      "path": "/song",
+      "handler": "song.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/nf-ts",
-      "handler": "nf-ts.delete",
+      "path": "/song",
+      "handler": "song.delete",
       "config": {
         "policies": []
       }

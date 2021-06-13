@@ -528,38 +528,6 @@
           "Description": {
             "type": "string"
           },
-          "singles": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "File"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "Name": {
-                  "type": "string"
-                },
-                "File": {
-                  "type": "string"
-                },
-                "album": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -573,12 +541,6 @@
           },
           "Description": {
             "type": "string"
-          },
-          "singles": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "published_at": {
             "type": "string",

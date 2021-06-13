@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/artists": {
+    "/artist": {
       "get": {
         "deprecated": false,
-        "description": "Find all the artists's records",
+        "description": "Find all the artist's records",
         "responses": {
           "200": {
-            "description": "Retrieve artists document(s)",
+            "description": "Retrieve artist document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Artists"
+                    "$ref": "#/components/schemas/Artist"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Artists"
+          "Artist"
         ],
         "parameters": [
           {
@@ -192,198 +192,16 @@
           }
         ]
       },
-      "post": {
-        "deprecated": false,
-        "description": "Create a new artists record",
-        "responses": {
-          "200": {
-            "description": "Retrieve artists document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Artists"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Artists"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewArtists"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/artists/count": {
-      "get": {
-        "deprecated": false,
-        "description": "Retrieve the numver of artists documents",
-        "responses": {
-          "200": {
-            "description": "Retrieve artists document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "count": {
-                      "type": "integer"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Artists"
-        ],
-        "parameters": []
-      }
-    },
-    "/artists/{id}": {
-      "get": {
-        "deprecated": false,
-        "description": "Find one artists record",
-        "responses": {
-          "200": {
-            "description": "Retrieve artists document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Artists"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Artists"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      },
       "put": {
         "deprecated": false,
-        "description": "Update a single artists record",
+        "description": "Update a single artist record",
         "responses": {
           "200": {
-            "description": "Retrieve artists document(s)",
+            "description": "Retrieve artist document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Artists"
+                  "$ref": "#/components/schemas/Artist"
                 }
               }
             }
@@ -421,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Artists"
+          "Artist"
         ],
         "requestBody": {
           "description": "",
@@ -429,30 +247,19 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewArtists"
+                "$ref": "#/components/schemas/NewArtist"
               }
             }
           }
         },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        "parameters": []
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single artists record",
+        "description": "Delete a single artist record",
         "responses": {
           "200": {
-            "description": "deletes a single artists based on the ID supplied",
+            "description": "deletes a single artist based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,26 +302,15 @@
         },
         "summary": "",
         "tags": [
-          "Artists"
+          "Artist"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        "parameters": []
       }
     }
   },
   "components": {
     "schemas": {
-      "Artists": {
+      "Artist": {
         "required": [
           "id"
         ],
@@ -522,13 +318,13 @@
           "id": {
             "type": "string"
           },
-          "Name": {
+          "name": {
             "type": "string"
           },
-          "Surname": {
+          "surname": {
             "type": "string"
           },
-          "Email": {
+          "email": {
             "type": "string"
           },
           "published_at": {
@@ -537,15 +333,15 @@
           }
         }
       },
-      "NewArtists": {
+      "NewArtist": {
         "properties": {
-          "Name": {
+          "name": {
             "type": "string"
           },
-          "Surname": {
+          "surname": {
             "type": "string"
           },
-          "Email": {
+          "email": {
             "type": "string"
           },
           "published_at": {
@@ -564,7 +360,7 @@
   },
   "tags": [
     {
-      "name": "Artists"
+      "name": "Artist"
     }
   ]
 }
