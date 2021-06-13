@@ -15,8 +15,8 @@
       "type": "email"
     },
     "artist": {
-      "model": "artist",
-      "via": "payouts"
+      "via": "payouts",
+      "model": "artist"
     }
   }
 }

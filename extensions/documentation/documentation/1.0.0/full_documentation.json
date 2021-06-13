@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "06/13/2021 4:48:55 PM"
+    "x-generation-date": "06/13/2021 6:06:10 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -5430,6 +5430,9 @@
                   "type": "string"
                 }
               },
+              "profile": {
+                "type": "string"
+              },
               "published_at": {
                 "type": "string"
               },
@@ -5560,7 +5563,10 @@
       },
       "Art": {
         "required": [
-          "id"
+          "id",
+          "name",
+          "format_file",
+          "file"
         ],
         "properties": {
           "id": {
@@ -5595,6 +5601,9 @@
                   "type": "string"
                 }
               },
+              "profile": {
+                "type": "string"
+              },
               "published_at": {
                 "type": "string"
               },
@@ -5609,6 +5618,92 @@
           "stock": {
             "type": "integer"
           },
+          "external_link": {
+            "type": "string"
+          },
+          "format_file": {
+            "type": "string",
+            "enum": [
+              "PNG",
+              "JPG",
+              "ZIP",
+              "PDF",
+              "OTHER"
+            ]
+          },
+          "file": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "extra_content_on": {
+            "type": "boolean"
+          },
+          "extra_content": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -5616,6 +5711,10 @@
         }
       },
       "NewArt": {
+        "required": [
+          "name",
+          "format_file"
+        ],
         "properties": {
           "name": {
             "type": "string"
@@ -5628,6 +5727,25 @@
           },
           "stock": {
             "type": "integer"
+          },
+          "external_link": {
+            "type": "string"
+          },
+          "format_file": {
+            "type": "string",
+            "enum": [
+              "PNG",
+              "JPG",
+              "ZIP",
+              "PDF",
+              "OTHER"
+            ]
+          },
+          "extra_content_on": {
+            "type": "boolean"
+          },
+          "extra_content": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -5683,6 +5801,73 @@
                 "updated_by": {
                   "type": "string"
                 }
+              }
+            }
+          },
+          "profile": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           },
@@ -5810,6 +5995,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "profile": {
+                "type": "string"
               },
               "published_at": {
                 "type": "string"
@@ -5999,6 +6187,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "profile": {
+                "type": "string"
               },
               "published_at": {
                 "type": "string"
