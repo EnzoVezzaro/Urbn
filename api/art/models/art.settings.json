@@ -1,5 +1,5 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "arts",
   "info": {
     "name": "Art",
@@ -17,6 +17,9 @@
     },
     "description": {
       "type": "text"
+    },
+    "artist": {
+      "model": "artist"
     }
   }
 }

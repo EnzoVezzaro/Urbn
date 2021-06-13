@@ -1,5 +1,5 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "songs",
   "info": {
     "name": "Song",
@@ -29,6 +29,13 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+    },
+    "album": {
+      "via": "songs",
+      "model": "albums"
+    },
+    "artist": {
+      "model": "artist"
     }
   }
 }

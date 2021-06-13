@@ -12,11 +12,28 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string"
     },
-    "Description": {
+    "description": {
       "type": "text"
+    },
+    "songs": {
+      "via": "album",
+      "collection": "song"
+    },
+    "artist": {
+      "model": "artist"
+    },
+    "Status": {
+      "type": "enumeration",
+      "enum": [
+        "under_review",
+        "pubblished",
+        "denied"
+      ],
+      "default": "under_review",
+      "private": true
     }
   }
 }

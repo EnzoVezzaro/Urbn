@@ -5,4 +5,11 @@
  * to customize this model
  */
 
-module.exports = {};
+ module.exports = {  
+    lifecycles: {
+        async afterUpdate(data) {
+          console.log('test webhooks');
+        },
+    },
+};
+

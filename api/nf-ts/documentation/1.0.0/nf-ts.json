@@ -193,6 +193,196 @@
           }
         ]
       },
+      "post": {
+        "deprecated": false,
+        "description": "Create a new nf-ts record",
+        "responses": {
+          "200": {
+            "description": "Retrieve nf-ts document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Nf-ts"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewNf-ts"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/nf-ts/count": {
+      "get": {
+        "deprecated": false,
+        "description": "Retrieve the numver of nf-ts documents",
+        "responses": {
+          "200": {
+            "description": "Retrieve nf-ts document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Nf-ts"
+        ],
+        "parameters": []
+      }
+    },
+    "/nf-ts/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "Find one nf-ts record",
+        "responses": {
+          "200": {
+            "description": "Retrieve nf-ts document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Nf-ts"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
       "put": {
         "deprecated": false,
         "description": "Update a single nf-ts record",
@@ -257,7 +447,18 @@
             }
           }
         },
-        "parameters": []
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       },
       "delete": {
         "deprecated": false,
@@ -309,7 +510,18 @@
         "tags": [
           "Nf-ts"
         ],
-        "parameters": []
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       }
     }
   },
@@ -329,6 +541,14 @@
           "merchant_url": {
             "type": "string"
           },
+          "merchant_provider": {
+            "type": "string",
+            "enum": [
+              "OpenSea",
+              "Mintable",
+              "Crypto"
+            ]
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -342,6 +562,14 @@
           },
           "merchant_url": {
             "type": "string"
+          },
+          "merchant_provider": {
+            "type": "string",
+            "enum": [
+              "OpenSea",
+              "Mintable",
+              "Crypto"
+            ]
           },
           "published_at": {
             "type": "string",

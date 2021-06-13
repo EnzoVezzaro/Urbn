@@ -1,8 +1,9 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "nf_ts",
   "info": {
-    "name": "NFTs"
+    "name": "NFTs",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -16,6 +17,14 @@
     },
     "merchant_url": {
       "type": "string"
+    },
+    "merchant_provider": {
+      "type": "enumeration",
+      "enum": [
+        "OpenSea",
+        "Mintable",
+        "Crypto"
+      ]
     }
   }
 }
