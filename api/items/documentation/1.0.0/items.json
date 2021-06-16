@@ -847,6 +847,12 @@
               }
             }
           },
+          "unlockable": {
+            "type": "boolean"
+          },
+          "price": {
+            "type": "number"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -907,6 +913,12 @@
             "items": {
               "type": "string"
             }
+          },
+          "unlockable": {
+            "type": "boolean"
+          },
+          "price": {
+            "type": "number"
           },
           "published_at": {
             "type": "string",

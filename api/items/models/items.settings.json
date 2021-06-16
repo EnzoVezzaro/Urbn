@@ -80,6 +80,12 @@
     },
     "artists": {
       "collection": "artist"
+    },
+    "unlockable": {
+      "type": "boolean"
+    },
+    "price": {
+      "type": "decimal"
     }
   }
 }

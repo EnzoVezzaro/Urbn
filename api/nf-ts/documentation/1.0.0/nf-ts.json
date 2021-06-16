@@ -630,6 +630,12 @@
                   "type": "string"
                 }
               },
+              "unlockable": {
+                "type": "boolean"
+              },
+              "price": {
+                "type": "number"
+              },
               "published_at": {
                 "type": "string"
               },
