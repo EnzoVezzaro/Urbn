@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import Logo from '../../../assets/images/logo-urbn.png';
+import Logo from '../../../assets/images/logo-urbn.svg';
 
 const Wrapper = styled.div`
   background-color: #007eff;
