@@ -718,6 +718,12 @@
               "item": {
                 "type": "string"
               },
+              "certificate": {
+                "type": "string"
+              },
+              "certificate_url": {
+                "type": "string"
+              },
               "published_at": {
                 "type": "string"
               },

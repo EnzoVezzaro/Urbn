@@ -45,6 +45,20 @@
     "item": {
       "via": "nf_t",
       "model": "items"
+    },
+    "certificate": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "certificate_url": {
+      "type": "string"
     }
   }
 }
