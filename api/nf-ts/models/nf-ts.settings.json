@@ -27,7 +27,8 @@
         "Mintable",
         "Crypto"
       ],
-      "required": true
+      "required": true,
+      "default": "OpenSea"
     },
     "contract_address": {
       "type": "string",

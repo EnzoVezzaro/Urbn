@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "06/16/2021 6:28:50 AM"
+    "x-generation-date": "06/16/2021 7:24:21 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6643,6 +6643,7 @@
           },
           "provider": {
             "type": "string",
+            "default": "OpenSea",
             "enum": [
               "OpenSea",
               "Mintable",
@@ -6758,6 +6759,7 @@
           },
           "provider": {
             "type": "string",
+            "default": "OpenSea",
             "enum": [
               "OpenSea",
               "Mintable",

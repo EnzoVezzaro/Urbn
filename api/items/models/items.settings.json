@@ -55,8 +55,8 @@
       "pluginOptions": {}
     },
     "nf_t": {
-      "model": "nf-ts",
-      "via": "item"
+      "via": "item",
+      "model": "nf-ts"
     },
     "status": {
       "type": "enumeration",
