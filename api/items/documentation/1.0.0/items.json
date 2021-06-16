@@ -1,19 +1,18 @@
 {
   "paths": {
-    "/nf-ts": {
+    "/items": {
       "get": {
         "deprecated": false,
-        "description": "Find all the nf-ts's records",
+        "description": "Find all the items's records",
         "responses": {
           "200": {
-            "description": "Retrieve nf-ts document(s)",
+            "description": "Retrieve items document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Items"
                   }
                 }
               }
@@ -52,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Nf-ts"
+          "Items"
         ],
         "parameters": [
           {
@@ -195,18 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new nf-ts record",
+        "description": "Create a new items record",
         "responses": {
           "200": {
-            "description": "Retrieve nf-ts document(s)",
+            "description": "Retrieve items document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Items"
                 }
               }
             }
@@ -244,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Nf-ts"
+          "Items"
         ],
         "requestBody": {
           "description": "",
@@ -252,26 +247,26 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewNf-ts"
+                "$ref": "#/components/schemas/NewItems"
               }
             }
           }
         }
       }
     },
-    "/nf-ts/count": {
+    "/items/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of nf-ts documents",
+        "description": "Retrieve the numver of items documents",
         "responses": {
           "200": {
-            "description": "Retrieve nf-ts document(s)",
+            "description": "Retrieve items document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "properties": {
-                    "foo": {
-                      "type": "string"
+                    "count": {
+                      "type": "integer"
                     }
                   }
                 }
@@ -311,26 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Nf-ts"
+          "Items"
         ],
         "parameters": []
       }
     },
-    "/nf-ts/{id}": {
+    "/items/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one nf-ts record",
+        "description": "Find one items record",
         "responses": {
           "200": {
-            "description": "Retrieve nf-ts document(s)",
+            "description": "Retrieve items document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Items"
                 }
               }
             }
@@ -368,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Nf-ts"
+          "Items"
         ],
         "parameters": [
           {
@@ -385,18 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single nf-ts record",
+        "description": "Update a single items record",
         "responses": {
           "200": {
-            "description": "Retrieve nf-ts document(s)",
+            "description": "Retrieve items document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Items"
                 }
               }
             }
@@ -434,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Nf-ts"
+          "Items"
         ],
         "requestBody": {
           "description": "",
@@ -442,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewNf-ts"
+                "$ref": "#/components/schemas/NewItems"
               }
             }
           }
@@ -462,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single nf-ts record",
+        "description": "Delete a single items record",
         "responses": {
           "200": {
-            "description": "deletes a single nf-ts based on the ID supplied",
+            "description": "deletes a single items based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -508,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Nf-ts"
+          "Items"
         ],
         "parameters": [
           {
@@ -527,53 +514,46 @@
   },
   "components": {
     "schemas": {
-      "Nf-ts": {
+      "Items": {
         "required": [
           "id",
-          "token_id",
-          "url",
-          "provider",
-          "contract_address",
-          "blockchain"
+          "name",
+          "original_link",
+          "description",
+          "explicit_content",
+          "cover",
+          "file",
+          "stock"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "token_id": {
+          "name": {
             "type": "string"
           },
-          "url": {
+          "original_link": {
             "type": "string"
           },
-          "provider": {
-            "type": "string",
-            "enum": [
-              "OpenSea",
-              "Mintable",
-              "Crypto"
-            ]
-          },
-          "contract_address": {
+          "description": {
             "type": "string"
           },
-          "blockchain": {
-            "type": "string",
-            "default": "Ethereum",
-            "enum": [
-              "Ethereum"
-            ]
+          "unlockable_content": {
+            "type": "string"
           },
-          "item": {
+          "explicit_content": {
+            "type": "boolean",
+            "default": false
+          },
+          "cover": {
             "required": [
               "id",
               "name",
-              "original_link",
-              "description",
-              "explicit_content",
-              "cover",
-              "file",
-              "stock"
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
             ],
             "properties": {
               "id": {
@@ -582,52 +562,161 @@
               "name": {
                 "type": "string"
               },
-              "original_link": {
+              "alternativeText": {
                 "type": "string"
               },
-              "description": {
+              "caption": {
                 "type": "string"
               },
-              "unlockable_content": {
-                "type": "string"
-              },
-              "explicit_content": {
-                "type": "boolean"
-              },
-              "cover": {
-                "type": "string"
-              },
-              "file": {
-                "type": "string"
-              },
-              "nf_t": {
-                "type": "string"
-              },
-              "status": {
-                "type": "string",
-                "enum": [
-                  "under_review",
-                  "pubblished",
-                  "denied"
-                ]
-              },
-              "stock": {
+              "width": {
                 "type": "integer"
               },
-              "categories": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "height": {
+                "type": "integer"
               },
-              "type": {
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
                 "type": "string"
               },
-              "artists": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "file": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "nf_t": {
+            "required": [
+              "id",
+              "token_id",
+              "url",
+              "provider",
+              "contract_address",
+              "blockchain"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "token_id": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string",
+                "enum": [
+                  "OpenSea",
+                  "Mintable",
+                  "Crypto"
+                ]
+              },
+              "contract_address": {
+                "type": "string"
+              },
+              "blockchain": {
+                "type": "string",
+                "enum": [
+                  "Ethereum"
+                ]
+              },
+              "item": {
+                "type": "string"
               },
               "published_at": {
                 "type": "string"
@@ -640,47 +729,184 @@
               }
             }
           },
+          "status": {
+            "type": "string",
+            "default": "under_review",
+            "enum": [
+              "under_review",
+              "pubblished",
+              "denied"
+            ]
+          },
+          "stock": {
+            "type": "integer"
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "description"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "cover": {
+                  "type": "string"
+                },
+                "item": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "type": {
+            "required": [
+              "id",
+              "name",
+              "description"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "artists": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "surname": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "payouts": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "profile": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
           }
         }
       },
-      "NewNf-ts": {
+      "NewItems": {
         "required": [
-          "token_id",
-          "url",
-          "provider",
-          "contract_address",
-          "blockchain"
+          "name",
+          "original_link",
+          "description",
+          "explicit_content",
+          "stock"
         ],
         "properties": {
-          "token_id": {
+          "name": {
             "type": "string"
           },
-          "url": {
+          "original_link": {
             "type": "string"
           },
-          "provider": {
+          "description": {
+            "type": "string"
+          },
+          "unlockable_content": {
+            "type": "string"
+          },
+          "explicit_content": {
+            "type": "boolean",
+            "default": false
+          },
+          "nf_t": {
+            "type": "string"
+          },
+          "status": {
             "type": "string",
+            "default": "under_review",
             "enum": [
-              "OpenSea",
-              "Mintable",
-              "Crypto"
+              "under_review",
+              "pubblished",
+              "denied"
             ]
           },
-          "contract_address": {
+          "stock": {
+            "type": "integer"
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "type": {
             "type": "string"
           },
-          "blockchain": {
-            "type": "string",
-            "default": "Ethereum",
-            "enum": [
-              "Ethereum"
-            ]
-          },
-          "item": {
-            "type": "string"
+          "artists": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",
@@ -696,5 +922,9 @@
       }
     }
   },
-  "tags": []
+  "tags": [
+    {
+      "name": "Items"
+    }
+  ]
 }

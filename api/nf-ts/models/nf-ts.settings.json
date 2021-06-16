@@ -12,19 +12,38 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "merchant_id": {
-      "type": "string"
+    "token_id": {
+      "type": "string",
+      "required": true
     },
-    "merchant_url": {
-      "type": "string"
+    "url": {
+      "type": "string",
+      "required": true
     },
-    "merchant_provider": {
+    "provider": {
       "type": "enumeration",
       "enum": [
         "OpenSea",
         "Mintable",
         "Crypto"
-      ]
+      ],
+      "required": true
+    },
+    "contract_address": {
+      "type": "string",
+      "required": true
+    },
+    "blockchain": {
+      "type": "enumeration",
+      "enum": [
+        "Ethereum"
+      ],
+      "default": "Ethereum",
+      "required": true
+    },
+    "item": {
+      "via": "nf_t",
+      "model": "items"
     }
   }
 }

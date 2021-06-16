@@ -1,19 +1,18 @@
 {
   "paths": {
-    "/nf-ts": {
+    "/categories": {
       "get": {
         "deprecated": false,
-        "description": "Find all the nf-ts's records",
+        "description": "Find all the categories's records",
         "responses": {
           "200": {
-            "description": "Retrieve nf-ts document(s)",
+            "description": "Retrieve categories document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Categories"
                   }
                 }
               }
@@ -52,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Nf-ts"
+          "Categories"
         ],
         "parameters": [
           {
@@ -195,18 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new nf-ts record",
+        "description": "Create a new categories record",
         "responses": {
           "200": {
-            "description": "Retrieve nf-ts document(s)",
+            "description": "Retrieve categories document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Categories"
                 }
               }
             }
@@ -244,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Nf-ts"
+          "Categories"
         ],
         "requestBody": {
           "description": "",
@@ -252,26 +247,26 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewNf-ts"
+                "$ref": "#/components/schemas/NewCategories"
               }
             }
           }
         }
       }
     },
-    "/nf-ts/count": {
+    "/categories/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of nf-ts documents",
+        "description": "Retrieve the numver of categories documents",
         "responses": {
           "200": {
-            "description": "Retrieve nf-ts document(s)",
+            "description": "Retrieve categories document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "properties": {
-                    "foo": {
-                      "type": "string"
+                    "count": {
+                      "type": "integer"
                     }
                   }
                 }
@@ -311,26 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Nf-ts"
+          "Categories"
         ],
         "parameters": []
       }
     },
-    "/nf-ts/{id}": {
+    "/categories/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one nf-ts record",
+        "description": "Find one categories record",
         "responses": {
           "200": {
-            "description": "Retrieve nf-ts document(s)",
+            "description": "Retrieve categories document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Categories"
                 }
               }
             }
@@ -368,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Nf-ts"
+          "Categories"
         ],
         "parameters": [
           {
@@ -385,18 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single nf-ts record",
+        "description": "Update a single categories record",
         "responses": {
           "200": {
-            "description": "Retrieve nf-ts document(s)",
+            "description": "Retrieve categories document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Categories"
                 }
               }
             }
@@ -434,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Nf-ts"
+          "Categories"
         ],
         "requestBody": {
           "description": "",
@@ -442,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewNf-ts"
+                "$ref": "#/components/schemas/NewCategories"
               }
             }
           }
@@ -462,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single nf-ts record",
+        "description": "Delete a single categories record",
         "responses": {
           "200": {
-            "description": "deletes a single nf-ts based on the ID supplied",
+            "description": "deletes a single categories based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -508,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Nf-ts"
+          "Categories"
         ],
         "parameters": [
           {
@@ -527,42 +514,88 @@
   },
   "components": {
     "schemas": {
-      "Nf-ts": {
+      "Categories": {
         "required": [
           "id",
-          "token_id",
-          "url",
-          "provider",
-          "contract_address",
-          "blockchain"
+          "name",
+          "description"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "token_id": {
+          "name": {
             "type": "string"
           },
-          "url": {
+          "description": {
             "type": "string"
           },
-          "provider": {
-            "type": "string",
-            "enum": [
-              "OpenSea",
-              "Mintable",
-              "Crypto"
-            ]
-          },
-          "contract_address": {
-            "type": "string"
-          },
-          "blockchain": {
-            "type": "string",
-            "default": "Ethereum",
-            "enum": [
-              "Ethereum"
-            ]
+          "cover": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           },
           "item": {
             "required": [
@@ -646,38 +679,17 @@
           }
         }
       },
-      "NewNf-ts": {
+      "NewCategories": {
         "required": [
-          "token_id",
-          "url",
-          "provider",
-          "contract_address",
-          "blockchain"
+          "name",
+          "description"
         ],
         "properties": {
-          "token_id": {
+          "name": {
             "type": "string"
           },
-          "url": {
+          "description": {
             "type": "string"
-          },
-          "provider": {
-            "type": "string",
-            "enum": [
-              "OpenSea",
-              "Mintable",
-              "Crypto"
-            ]
-          },
-          "contract_address": {
-            "type": "string"
-          },
-          "blockchain": {
-            "type": "string",
-            "default": "Ethereum",
-            "enum": [
-              "Ethereum"
-            ]
           },
           "item": {
             "type": "string"
@@ -696,5 +708,9 @@
       }
     }
   },
-  "tags": []
+  "tags": [
+    {
+      "name": "Categories"
+    }
+  ]
 }

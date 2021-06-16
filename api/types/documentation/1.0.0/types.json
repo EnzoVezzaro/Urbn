@@ -1,19 +1,18 @@
 {
   "paths": {
-    "/nf-ts": {
+    "/types": {
       "get": {
         "deprecated": false,
-        "description": "Find all the nf-ts's records",
+        "description": "Find all the types's records",
         "responses": {
           "200": {
-            "description": "Retrieve nf-ts document(s)",
+            "description": "Retrieve types document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Types"
                   }
                 }
               }
@@ -52,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Nf-ts"
+          "Types"
         ],
         "parameters": [
           {
@@ -195,18 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new nf-ts record",
+        "description": "Create a new types record",
         "responses": {
           "200": {
-            "description": "Retrieve nf-ts document(s)",
+            "description": "Retrieve types document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Types"
                 }
               }
             }
@@ -244,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Nf-ts"
+          "Types"
         ],
         "requestBody": {
           "description": "",
@@ -252,26 +247,26 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewNf-ts"
+                "$ref": "#/components/schemas/NewTypes"
               }
             }
           }
         }
       }
     },
-    "/nf-ts/count": {
+    "/types/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of nf-ts documents",
+        "description": "Retrieve the numver of types documents",
         "responses": {
           "200": {
-            "description": "Retrieve nf-ts document(s)",
+            "description": "Retrieve types document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "properties": {
-                    "foo": {
-                      "type": "string"
+                    "count": {
+                      "type": "integer"
                     }
                   }
                 }
@@ -311,26 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Nf-ts"
+          "Types"
         ],
         "parameters": []
       }
     },
-    "/nf-ts/{id}": {
+    "/types/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one nf-ts record",
+        "description": "Find one types record",
         "responses": {
           "200": {
-            "description": "Retrieve nf-ts document(s)",
+            "description": "Retrieve types document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Types"
                 }
               }
             }
@@ -368,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Nf-ts"
+          "Types"
         ],
         "parameters": [
           {
@@ -385,18 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single nf-ts record",
+        "description": "Update a single types record",
         "responses": {
           "200": {
-            "description": "Retrieve nf-ts document(s)",
+            "description": "Retrieve types document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Types"
                 }
               }
             }
@@ -434,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Nf-ts"
+          "Types"
         ],
         "requestBody": {
           "description": "",
@@ -442,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewNf-ts"
+                "$ref": "#/components/schemas/NewTypes"
               }
             }
           }
@@ -462,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single nf-ts record",
+        "description": "Delete a single types record",
         "responses": {
           "200": {
-            "description": "deletes a single nf-ts based on the ID supplied",
+            "description": "deletes a single types based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -508,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Nf-ts"
+          "Types"
         ],
         "parameters": [
           {
@@ -527,53 +514,31 @@
   },
   "components": {
     "schemas": {
-      "Nf-ts": {
+      "Types": {
         "required": [
           "id",
-          "token_id",
-          "url",
-          "provider",
-          "contract_address",
-          "blockchain"
+          "name",
+          "description"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "token_id": {
+          "name": {
             "type": "string"
           },
-          "url": {
+          "description": {
             "type": "string"
           },
-          "provider": {
-            "type": "string",
-            "enum": [
-              "OpenSea",
-              "Mintable",
-              "Crypto"
-            ]
-          },
-          "contract_address": {
-            "type": "string"
-          },
-          "blockchain": {
-            "type": "string",
-            "default": "Ethereum",
-            "enum": [
-              "Ethereum"
-            ]
-          },
-          "item": {
+          "icon": {
             "required": [
               "id",
               "name",
-              "original_link",
-              "description",
-              "explicit_content",
-              "cover",
-              "file",
-              "stock"
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
             ],
             "properties": {
               "id": {
@@ -582,54 +547,46 @@
               "name": {
                 "type": "string"
               },
-              "original_link": {
+              "alternativeText": {
                 "type": "string"
               },
-              "description": {
+              "caption": {
                 "type": "string"
               },
-              "unlockable_content": {
-                "type": "string"
-              },
-              "explicit_content": {
-                "type": "boolean"
-              },
-              "cover": {
-                "type": "string"
-              },
-              "file": {
-                "type": "string"
-              },
-              "nf_t": {
-                "type": "string"
-              },
-              "status": {
-                "type": "string",
-                "enum": [
-                  "under_review",
-                  "pubblished",
-                  "denied"
-                ]
-              },
-              "stock": {
+              "width": {
                 "type": "integer"
               },
-              "categories": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "height": {
+                "type": "integer"
               },
-              "type": {
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
                 "type": "string"
               },
-              "artists": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "ext": {
+                "type": "string"
               },
-              "published_at": {
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
                 "type": "string"
               },
               "created_by": {
@@ -646,40 +603,16 @@
           }
         }
       },
-      "NewNf-ts": {
+      "NewTypes": {
         "required": [
-          "token_id",
-          "url",
-          "provider",
-          "contract_address",
-          "blockchain"
+          "name",
+          "description"
         ],
         "properties": {
-          "token_id": {
+          "name": {
             "type": "string"
           },
-          "url": {
-            "type": "string"
-          },
-          "provider": {
-            "type": "string",
-            "enum": [
-              "OpenSea",
-              "Mintable",
-              "Crypto"
-            ]
-          },
-          "contract_address": {
-            "type": "string"
-          },
-          "blockchain": {
-            "type": "string",
-            "default": "Ethereum",
-            "enum": [
-              "Ethereum"
-            ]
-          },
-          "item": {
+          "description": {
             "type": "string"
           },
           "published_at": {
@@ -696,5 +629,9 @@
       }
     }
   },
-  "tags": []
+  "tags": [
+    {
+      "name": "Types"
+    }
+  ]
 }
